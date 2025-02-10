@@ -1,0 +1,24 @@
+cabal-version:   3.4
+name:            superellipse
+version:         1.0.0.0
+synopsis:        A drawing of a superellipse
+license:         GPL-3.0-or-later
+license-file:    LICENSE
+author:          flyingsl0ths
+maintainer:      randomemail33110@protonmail.com
+category:        Graphics
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+common warnings
+  ghc-options: -Wall
+
+executable superellipse
+  import:           warnings
+  main-is:          Main.hs
+  build-depends:
+    , base      ^>=4.20.0.0
+    , h-raylib  ==5.5.2.0
+
+  hs-source-dirs:   app
+  default-language: GHC2024
