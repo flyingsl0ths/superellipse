@@ -2,12 +2,14 @@
 
 module Main where
 
-import Data.Bifunctor (bimap)
-import Raylib.Core (clearBackground, closeWindow, initWindow, setTargetFPS, windowShouldClose)
-import Raylib.Core.Shapes (drawLine)
-import Raylib.Core.Text (drawText)
-import Raylib.Util (WindowResources, drawing, raylibApplication)
-import Raylib.Util.Colors (black, rayWhite, red)
+import           Data.Bifunctor     ( bimap )
+import           Raylib.Core        ( clearBackground, closeWindow, initWindow)
+import           Raylib.Core        (setTargetFPS, windowShouldClose )
+import           Raylib.Core.Shapes ( drawLine )
+import           Raylib.Core.Text   ( drawText )
+import           Raylib.Util        ( WindowResources, drawing)
+import           Raylib.Util        (raylibApplication )
+import           Raylib.Util.Colors ( black, rayWhite, red )
 
 type Point = (Float, Float)
 
