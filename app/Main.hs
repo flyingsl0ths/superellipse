@@ -2,7 +2,6 @@
 
 module Main where
 
-import           Data.Bifunctor     ( bimap )
 import           Raylib.Core        ( clearBackground, closeWindow, initWindow)
 import           Raylib.Core        (setTargetFPS, windowShouldClose )
 import           Raylib.Core.Shapes ( drawLine )
@@ -51,8 +50,8 @@ getPoints pointsToDraw (ox, oy) (width, height) = iter 0 []
   angle = twoPi / pointsToDraw
   iter i acc
     | i <= twoPi =
-        let ps' = bimap ((ox +) . (* width)) ((oy +) . (* height)) $ superEllipse i
-         in iter (i + angle) (ps' : acc)
+        let (x, y) = superEllipse i
+         in iter (i + angle) ((ox + x * width, oy + y * height) : acc)
     | otherwise = acc
 
 startup :: IO WindowResources
